@@ -6,7 +6,7 @@ def leer_pdf(ruta_pdf):
     Lee un archivo PDF y devuelve todo su texto.
     """
 
-    lector = PdfReader(ruta_pdf)
+    lector = PdfReader(str(ruta_pdf))
 
     texto = ""
 
