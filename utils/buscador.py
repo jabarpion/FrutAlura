@@ -1,6 +1,30 @@
 import re
 
 
+STOPWORDS = {
+    "de",
+    "la",
+    "el",
+    "los",
+    "las",
+    "y",
+    "o",
+    "que",
+    "en",
+    "un",
+    "una",
+    "es",
+    "al",
+    "del",
+    "por",
+    "para",
+    "con",
+    "se",
+    "su",
+    "sus"
+}
+
+
 def tokenizar(texto):
     """
     Convierte un texto en un conjunto de palabras.
@@ -8,7 +32,11 @@ def tokenizar(texto):
 
     palabras = re.findall(r"\w+", texto.lower())
 
-    return set(palabras)
+    return {
+        palabra
+        for palabra in palabras
+        if palabra not in STOPWORDS
+    }
 
 
 def buscar_chunks(pregunta, chunks, top_k=3):
@@ -30,12 +58,14 @@ def buscar_chunks(pregunta, chunks, top_k=3):
             )
         )
 
-        resultados.append(
-            (
-                puntaje,
-                chunk
+        if puntaje > 0:
+
+            resultados.append(
+                (
+                    puntaje,
+                    chunk
+                )
             )
-        )
 
     resultados.sort(
         reverse=True,

@@ -26,6 +26,9 @@ def preguntar_al_pdf(texto_pdf, pregunta):
         top_k=3
     )
 
+    if not mejores_chunks:
+        return "No encontré esa información en el documento."
+
     print("Chunks totales:", len(chunks))
     print("Chunks recuperados:", len(mejores_chunks))
 
@@ -80,6 +83,7 @@ RESPUESTA:
     except Exception as e:
 
         return (
-            "⚠️ Error al consultar Gemini.\n\n"
-            f"Detalle: {e}"
+          "⚠️ El servicio de inteligencia artificial no está disponible en este momento. "
+          "Intenta nuevamente en unos minutos.\n\n"
+          f"Detalle técnico: {e}"
         )
