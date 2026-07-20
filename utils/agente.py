@@ -23,7 +23,7 @@ def preguntar_al_pdf(texto_pdf, pregunta):
     mejores_chunks = buscar_chunks(
         pregunta,
         chunks,
-        top_k=3
+        top_k=5
     )
 
     if not mejores_chunks:

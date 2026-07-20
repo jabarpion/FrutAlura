@@ -58,6 +58,10 @@ def buscar_chunks(pregunta, chunks, top_k=3):
             )
         )
 
+        print("-" * 40)
+        print("Puntaje:", puntaje)
+        print(chunk[:200])
+
         if puntaje > 0:
 
             resultados.append(
