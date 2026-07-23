@@ -247,3 +247,10 @@ El agente utiliza exclusivamente este documento para responder preguntas.
 GitHub: https://github.com/jabarpion
 
 Proyecto desarrollado como entrega del **Challenge Alura Agente**.
+
+
+## Capturas de pantalla
+
+1-1
+1-2
+2-1...
