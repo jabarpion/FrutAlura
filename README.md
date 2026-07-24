@@ -8,6 +8,16 @@ El proyecto implementa un flujo **RAG (Retrieval-Augmented Generation)** sencill
 
 ---
 
+# 🚀 Aplicación en línea
+
+La aplicación está desplegada en **Streamlit Community Cloud**.
+
+**URL:** https://frutalura-t5sqymuhxa9xkh3yljkbrd.streamlit.app/
+
+---
+
+---
+
 # Características
 
 - Lectura automática del documento PDF.
