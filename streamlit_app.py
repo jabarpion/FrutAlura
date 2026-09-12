@@ -2,6 +2,7 @@ import streamlit as st
 from pathlib import Path
 
 from utils.lector_pdf import leer_pdf
+from utils.lector_excel import leer_excel
 from utils.agente import preguntar_al_pdf
 
 
@@ -12,14 +13,28 @@ st.set_page_config(
 
 
 @st.cache_data
-def cargar_documento():
-    ruta_pdf = (
+def cargar_documentos():
+
+    carpeta_documentos = (
         Path(__file__).parent
         / "documentos"
+    )
+
+    ruta_pdf = (
+        carpeta_documentos
         / "codigo_conducta_frutalura.pdf"
     )
 
-    return leer_pdf(ruta_pdf)
+    ruta_excel = (
+        carpeta_documentos
+        / "EMBALAJES ETIQUETAS KIWI.xlsx"
+    )
+
+    texto_pdf = leer_pdf(ruta_pdf)
+
+    df_excel = leer_excel(ruta_excel)
+
+    return texto_pdf, df_excel
 
 
 if "messages" not in st.session_state:
@@ -29,16 +44,23 @@ if "messages" not in st.session_state:
 st.title("🤖 Agente Inteligente FrutAlura")
 
 st.write(
-    "Haz preguntas sobre el Código de Conducta de FrutAlura."
+    "Haz preguntas sobre el Código de Conducta "
+    "o sobre embalajes y etiquetas de kiwi."
 )
 
 
 for mensaje in st.session_state.messages:
+
     with st.chat_message(mensaje["role"]):
-        st.markdown(mensaje["content"])
+
+        st.markdown(
+            mensaje["content"]
+        )
 
 
-pregunta = st.chat_input("Escribe tu pregunta...")
+pregunta = st.chat_input(
+    "Escribe tu pregunta..."
+)
 
 
 if pregunta:
@@ -51,19 +73,27 @@ if pregunta:
     )
 
     with st.chat_message("user"):
+
         st.markdown(pregunta)
 
-    with st.spinner("Consultando documento..."):
 
-        texto_pdf = cargar_documento()
+    with st.spinner(
+        "Consultando documentos..."
+    ):
+
+        texto_pdf, df_excel = cargar_documentos()
 
         respuesta = preguntar_al_pdf(
             texto_pdf,
             pregunta,
+            df_excel
         )
 
+
     with st.chat_message("assistant"):
+
         st.markdown(respuesta)
+
 
     st.session_state.messages.append(
         {

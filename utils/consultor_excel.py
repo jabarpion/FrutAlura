@@ -37,38 +37,12 @@ def buscar_en_excel(df, pregunta, max_resultados=10):
     )
 
     stopwords = {
-        "que",
-        "cual",
-        "cuales",
-        "como",
-        "donde",
-        "cuando",
-        "para",
-        "del",
-        "las",
-        "los",
-        "una",
-        "uno",
-        "por",
-        "con",
-        "es",
-        "el",
-        "la",
-        "de",
-        "en",
-        "un",
-        "y",
-        "a",
-        "se",
-        "me",
-        "hay",
-        "dime",
-        "muestra",
-        "mostrar",
-        "quiero",
-        "necesito",
-        "tiene",
-        "tienen"
+        "que", "cual", "cuales", "como", "donde",
+        "cuando", "para", "del", "las", "los",
+        "una", "uno", "por", "con", "es", "el",
+        "la", "de", "en", "un", "y", "a", "se",
+        "me", "hay", "dime", "muestra", "mostrar",
+        "quiero", "necesito", "tiene", "tienen"
     }
 
     palabras = [
