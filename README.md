@@ -1,4 +1,4 @@
-# 🤖 Agente Inteligente FrutAlura
+# 🤖 Agente Inteligente FrutAlura con modificaciones posteriores al primer proyecto
 
 Presento mi Agente Inteligente pensado en una solución tecnológica a las múltiples preguntas que deben responder en Recursos Humanos de una empresa frutícola.
 
