@@ -1,6 +1,6 @@
 # 🤖 Agente Inteligente FrutAlura con modificaciones posteriores al primer proyecto
 
-Presento mi Agente Inteligente pensado en una solución tecnológica a las múltiples preguntas que deben responder en Recursos Humanos de una empresa frutícola.
+Presento mi Agente Inteligente pensado en una solución tecnológica a las múltiples preguntas que deben responder en Recursos Humanos y/o los embalajes de producción de una empresa frutícola.
 
 Agente de Inteligencia Artificial desarrollado como solución al **Challenge Alura Agente**. La aplicación responde preguntas sobre el **Código de Conducta y Ética Empresarial de FrutAlura**, utilizando como única fuente de información un documento PDF almacenado localmente.
 
@@ -21,6 +21,7 @@ La aplicación está desplegada en **Streamlit Community Cloud**.
 # Características
 
 - Lectura automática del documento PDF.
+- Lectura de documento Excel.
 - División del documento en fragmentos (chunks).
 - Recuperación de los fragmentos más relevantes según la pregunta.
 - Generación de respuestas mediante Google Gemini.
@@ -116,7 +117,7 @@ FrutAlura/
 
 # Funcionamiento
 
-1. El sistema lee el documento PDF.
+1. El sistema lee el documento PDF o Excel.
 2. El documento se divide en fragmentos.
 3. El buscador recupera los fragmentos más relacionados con la pregunta.
 4. Se construye un contexto con los mejores fragmentos.
@@ -192,6 +193,7 @@ Una vez desplegada, puede accederse mediante la URL pública correspondiente al 
 Fuente de información:
 
 - Código de Conducta y Ética Empresarial de FrutAlura (PDF)
+- EMBALAJES ETIQUETAS KIWI (Excel)
 
 El agente utiliza exclusivamente este documento para responder preguntas.
 
@@ -207,6 +209,9 @@ El agente utiliza exclusivamente este documento para responder preguntas.
 - ¿Qué normas existen sobre conflictos de interés?
 - ¿Cómo deben protegerse los activos de la empresa?
 - ¿Qué indica el documento sobre confidencialidad?
+- Bolsa embalaje 10C
+- Embalaje 9CS
+- Embalaje hayward A1E
 
 ---
 
@@ -234,11 +239,23 @@ El agente utiliza exclusivamente este documento para responder preguntas.
 
 **Pregunta**
 
-> ¿Cuál es la política de vacaciones?
+> soreli T6C
 
 **Respuesta**
 
-> No encontré esa información en el documento.
+> Aquí tienes la información para SORELI T6C:
+
+    ESPECIE: SORELI
+    COLOR: EF
+    EMBALAJE: T6C
+    CATEGORÍA: 1
+    PLU: NO
+    DESTINO: INGLATERRA
+    CLIENTE: DPSL (TESCO)
+    ENVASE: CAJA TESCO SPECIAL
+    BOLSA: CARGO 938
+    PESO: 6600
+
 
 ---
 
